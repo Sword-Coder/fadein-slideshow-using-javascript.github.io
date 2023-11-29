@@ -13,7 +13,7 @@ body {
 	vertical-align: middle;
   }
   .holder {
-	height: 80vh;
+	height: 60vh;
 	display: flex;
   }
   /* Position the image container (needed to position the left and right arrows) */
