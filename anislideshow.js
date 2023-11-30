@@ -20,6 +20,30 @@ function changeImg(){
 	setTimeout("changeImg()", time);
 }
 
+function display(src) {
+  let result = getImageFromURL(src, images)
+  console.log(result)
+}
+
+//This is a nested function which only called
+function getImageFromURL(url, imagesArray) {
+  if (!url || typeof url !== 'string') {
+    return null; // Invalid URL, return null
+  }
+
+  let regex = /slides\/(\w+\.(?:png|jpeg|jpg))/; // Regular expression to match "slides/" followed by the image filename
+  let matches = url.match(regex); // Find matches in the given URL
+
+  if (matches) {
+    let matchedImage = matches[0]; // Extract the matched image filename
+    if (imagesArray.includes(matchedImage)) {
+      return matchedImage; // Return the matched image filename
+    }
+  }
+
+  return null; // No match found or image not present in the array, return null
+}
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -45,7 +69,7 @@ function showSlides(n) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  //dots[slideIndex-1].className += " active";
   //captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
