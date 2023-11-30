@@ -7,6 +7,6 @@ also you need to add name of the added image in the images array in HTML page.
 
 note - make sure all the photoes you upload are correct to image specifications used 
 
-This Project was made by Vishal Lodha.
+This Project was made by Vishal Lodha's template.
 
 follow for more interesting projects 
