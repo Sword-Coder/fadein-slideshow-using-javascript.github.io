@@ -3,9 +3,13 @@ body {
 	display: flex;
 	justify-content: center;
 	margin: 0;
-	overflow: hidden;
+	-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
   }
-
+  /*Hide the scroll bar*/
+  body::-webkit-scrollbar {
+    display: none;
+} 
   * {
 	box-sizing: border-box;
   }
@@ -22,14 +26,6 @@ body {
 	width: 100vw;
 	position: relative;
   }
-  /*Hide the scroll bar*/
-  .container::-webkit-scrollbar {
-    display: none;
-} 
-.container {
-	-ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
   /* Hide the images by default */
   .mySlides {
 	display: none;
