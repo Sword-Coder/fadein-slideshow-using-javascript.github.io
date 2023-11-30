@@ -1,18 +1,8 @@
 window.onload=changeImg;
 
 var i = 0; 			// Start Point
-var images = [];	// Images Array
+var images = ["slides/1.png","slides/2.png","slides/3.png","slides/4.png","slides/15.png","slides/Live Programs.jpeg","slides/Church Media.png","slides/It's Ours To Reach.png",];	// Images Array
 var time = 8000;	// Time Between Switch
-	 
-// Image List
-images[0] = "slides/1.png";
-images[1] = "slides/2.png";
-images[2] = "slides/3.png";
-images[3] = "slides/4.png";
-images[4] = "slides/15.png";
-images[5] = "slides/Live Programs.jpeg";
-images[6] = "slides/Church Media.png";
-images[7] = "slides/It's Ours To Reach.png";
 
 function changeImg(){
 	document.slide.src = images[i];
