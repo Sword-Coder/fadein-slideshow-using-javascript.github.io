@@ -1,0 +1,18 @@
+{
+  "name": "fadein-slideshow-using-javascript.github.io",
+  "version": "1.0.0",
+  "description": "I am making a slideshow.",
+  "main": "anislideshow.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "jevespada12@gmail.com"
+  },
+  "author": "Jev Espada (Sword-Coder)",
+  "license": "ISC",
+  "dependencies": {
+    "pouchdb": "^8.0.1"
+  }
+}
