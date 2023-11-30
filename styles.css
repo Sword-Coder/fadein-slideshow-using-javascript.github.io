@@ -5,6 +5,7 @@ body {
 	margin: 0;
 	-ms-overflow-style: none;  /* IE and Edge */
   	scrollbar-width: none; 
+	overflow: hidden;
   }
   /*Hide the scroll bar*/
   body::-webkit-scrollbar {
