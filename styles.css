@@ -4,8 +4,7 @@ body {
 	justify-content: center;
 	margin: 0;
 	-ms-overflow-style: none;  /* IE and Edge */
-  	scrollbar-width: none; 
-	overflow: hidden;
+  	scrollbar-width: none;
   }
   /*Hide the scroll bar*/
   body::-webkit-scrollbar {
@@ -105,62 +104,17 @@ body {
 	opacity: 1;
   }
 
-
-
-
-  
-/*
-#content {
-	margin: 50px auto 20px auto;
-	border: 10px solid #ffffff;
-	width: 100%;
+ /*Modal*/ 
+  .modal {
 	height: 100vh;
-	position: relative;
-}
-
-#content img {
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-p { text-align: center; }
-
-
-
-#links {
-	width: 420px;
-	display: flex;
-	margin: auto;
-}
-
-#links a {
-	display: block;
-	flex: 1;
-	background: #6C0204;
-	height: 50px;
-	line-height: 50px;
-	color: #D5D5D5;
-	text-decoration: none;
-	font-family: Arial;
-	text-transform: uppercase;
-	text-align: center;
-}
-
-#links a:hover {
-	background: #A51D1F;
-	color: #fff;
-}
-
-.fadeinanimation{
-	animation: fadein 2s;
-}
-
-@keyframes fadein{
-	from {
-		opacity: 0;
+	width: 100vw;
+	background-color: rgb(219, 191, 181);
+	opacity: 99%;
+	& > * {
+	  margin: 0 0 0.5rem 0;
 	}
-	to{
-		opacity: 1;
-	}
-}*/
+  }
+  
+  .modal::backdrop {
+	background: rgb(0 0 0 / 0.4);
+  }

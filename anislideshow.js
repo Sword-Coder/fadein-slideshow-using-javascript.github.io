@@ -21,8 +21,16 @@ function changeImg(){
 }
 
 function display(src) {
+  let detail="`<h1>HeLLo</h1>`"
   let result = getImageFromURL(src, images)
   console.log(result)
+  var x = document.getElementById("modal");
+    x.style.display = "block";
+    document.window.src = result
+}
+function closemodal() {
+  var x = document.getElementById("modal");
+  x.style.display = "none";
 }
 
 //This is a nested function which only called
