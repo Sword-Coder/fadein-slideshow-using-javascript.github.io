@@ -26,7 +26,7 @@ let announcements = [
 {
     "image": "15.png",
     "title": "Merry Christmas",
-    "details": "It's only a few more days before Christmas and the New Year is just right after. Get your family into church this December 17 for the Christmas Cantata nad help hear the wonderful story about Christ. Come, hear good and godly music and be reminded of God's love.",
+    "details": "It's only a few more days before Christmas and the New Year is just right after. Get your family into church this December 17 for the Christmas Cantata and help them hear the wonderful story about Christ. Come, hear good and godly music and be reminded of God's love.",
     "schedule": {}
 },
 {
