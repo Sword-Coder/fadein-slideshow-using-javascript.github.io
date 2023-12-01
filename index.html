@@ -9,7 +9,7 @@
     <link href="styles.css" rel="stylesheet">
 
     <script src="anislideshow.js" defer></script>
-
+    <script src="store-data.js"></script>
 </head>
 
 <body>
@@ -105,10 +105,14 @@
     <h2>About this...</h2>
     <div class="row">
       <div class="column">
-        <img name="window" style="width:50vw" alt="Announcements">
+        <img id="ModalImage" name="window" style="width:50vw" alt="Announcements">
+      </div>
+      <div class="column right">
+        <h1>Title</h1>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem iure doloribus obcaecati voluptatum numquam vero consectetur. Ipsum repellendus, ipsa eum, ratione et ab enim corrupti nisi maxime consequatur suscipit accusantium!</span>
       </div>
     </div>
-    <button onclick="closemodal()">close modal</button>
+    <button id="ModalButton" onclick="closemodal()">Close</button>
   </dialog>
 </body>
 
