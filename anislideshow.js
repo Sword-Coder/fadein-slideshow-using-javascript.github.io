@@ -1,8 +1,8 @@
 window.onload=changeImg;
 
 var i = 0; 			// Start Point
-var images = ["slides/1.png","slides/2.png","slides/3.png","slides/4.png","slides/15.png","slides/Live Programs.jpeg","slides/Church Media.png","slides/It's Ours To Reach.png",];	// Images Array
-var time = 8000;	// Time Between Switch
+var images = ["slides/1.png","slides/2.png","slides/3.png","slides/4.png","slides/15.png","slides/Live Programs.jpeg","slides/Church Media.png","slides/It's Ours To Reach.png"];	// Images Array
+var time = 9000;	// Time Between Switch
 
 function changeImg(){
 	document.slide.src = images[i];
@@ -27,6 +27,8 @@ function display(src) {
   var x = document.getElementById("modal");
     x.style.display = "block";
     document.window.src = result
+
+  console.log(announcements)
 }
 function closemodal() {
   var x = document.getElementById("modal");
@@ -39,11 +41,16 @@ function getImageFromURL(url, imagesArray) {
     return null; // Invalid URL, return null
   }
 
-  let regex = /slides\/(\w+\.(?:png|jpeg|jpg))/; // Regular expression to match "slides/" followed by the image filename
-  let matches = url.match(regex); // Find matches in the given URL
+  //let regex1 = /slides\/(\w+\.(?:png|jpeg|jpg))/; // Regular expression to match "slides/" followed by the image filename
+  //With regex1 I cannot get the image url without the %20 space sign.
+  let regex2 = /slides\/([^/]+(?:png|jpeg|jpg))/;
+  let matches = url.match(regex2); // Find matches in the given URL
+
+  console.log(matches)
 
   if (matches) {
-    let matchedImage = matches[0]; // Extract the matched image filename
+    //v1 let matchedImage = matches[0] //This gave a none decoded url such as "http://127.0.0.1:5500/slides/Live%20Programs.jpeg"
+    let matchedImage = decodeURIComponent(matches[0]); // Extract the matched image filename
     if (imagesArray.includes(matchedImage)) {
       return matchedImage; // Return the matched image filename
     }
