@@ -27,12 +27,20 @@ function display(src) {
   var x = document.getElementById("modal");
     x.style.display = "block";
     document.window.src = result
-
-  console.log(announcements)
 }
 function closemodal() {
   var x = document.getElementById("modal");
   x.style.display = "none";
+}
+
+//Find object image.
+function getObjectByImage(announcements, image) {
+  for (let i = 0; i < announcements.length; i++) {
+    if (announcements[i].image === image) {
+      return announcements[i];
+    }
+  }
+  return null; // Return null if no matching object is found
 }
 
 //This is a nested function which only called
@@ -40,18 +48,31 @@ function getImageFromURL(url, imagesArray) {
   if (!url || typeof url !== 'string') {
     return null; // Invalid URL, return null
   }
-
   //let regex1 = /slides\/(\w+\.(?:png|jpeg|jpg))/; // Regular expression to match "slides/" followed by the image filename
   //With regex1 I cannot get the image url without the %20 space sign.
   let regex2 = /slides\/([^/]+(?:png|jpeg|jpg))/;
   let matches = url.match(regex2); // Find matches in the given URL
 
-  console.log(matches)
+  const desiredImage = decodeURIComponent(matches[1]);
+  const ImgObjectDetails = getObjectByImage(announcements, desiredImage);
+
+  console.log(ImgObjectDetails)
 
   if (matches) {
+    var modalDetails = "";
+    var title = ImgObjectDetails.title
+    var detail = ImgObjectDetails.details
     //v1 let matchedImage = matches[0] //This gave a none decoded url such as "http://127.0.0.1:5500/slides/Live%20Programs.jpeg"
     let matchedImage = decodeURIComponent(matches[0]); // Extract the matched image filename
     if (imagesArray.includes(matchedImage)) {
+      modalDetails += `<div class="column">
+    <img id="ModalImage" name="window" style="width:50vw" alt="Announcements">
+    </div>
+    <div class="column right">
+    <h1>${title}</h1>
+    <p>${detail}</p>
+    </div>`
+      document.querySelector(".row").innerHTML = modalDetails
       return matchedImage; // Return the matched image filename
     }
   }
