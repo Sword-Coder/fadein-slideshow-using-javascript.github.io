@@ -10,6 +10,12 @@ body {
   body::-webkit-scrollbar {
     display: none;
 } 
+p {
+	font-size: 2rem;
+}
+h1 {
+	text-align: center;
+}
   * {
 	box-sizing: border-box;
   }
