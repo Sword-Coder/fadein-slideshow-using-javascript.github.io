@@ -37,8 +37,8 @@ let announcements = [
 },
 {
     "image": "It's Ours To Reach.png",
-    "title": "Daily Truth",
-    "details": "Get your daily dose of biblical truth in our anchor app. Heed to what God wants you to do today.",
+    "title": "Missions Giving",
+    "details": "May you keep in mind the need of our missionaries. Please pray for them and do not forget to give for missions.",
     "schedule": {}
 },
 {
