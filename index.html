@@ -1,119 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
     <title>Slide Show with Cross Fade</title>
 
-    <link href="styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" />
 
     <script src="anislideshow.js" defer></script>
     <script src="store-data.js"></script>
-</head>
+    <script src="scripture-data.js"></script>
+    <script src="bible-data.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+  </head>
 
-<body>
-<!--
+  <body>
+    <!--
     <div id="content">
         <img src="slides/Church Media.png" alt="slideshow image" id="myimage" style="width:100%">
     </div>
     <p id="links"><a href="#" id="previous">previous</a><a href="#" id="next">next</a></p>
     <h2 style="text-align:center">Slideshow Gallery</h2>
   -->
-  <div class="holder">
-    <div class="container">
-      <div class="mySlides">
-        <!--<div class="numbertext">1 / 8</div>-->
-        <img name="slide" src="slides/1.png" onclick="display(src)" style="width:100%; height:100vh">
-      </div>
-      <!--
-      <div class="mySlides">
-        <div class="numbertext">2 / 8</div>
-        <img src="slides/2.png" style="width:100%; height:91vh">
-      </div>
-    
-      <div class="mySlides">
-        <div class="numbertext">3 / 8</div>
-        <img src="slides/3.png" style="width:100%; height:91vh">
-      </div>
-        
-      <div class="mySlides">
-        <div class="numbertext">4 / 8</div>
-        <img src="slides/4.png" style="width:100%; height:91vh">
-      </div>
-    
-      <div class="mySlides">
-        <div class="numbertext">5 / 8</div>
-        <img src="slides/It's Ours To Reach.png" style="width:100%; height:91vh">
-      </div>
-        
-      <div class="mySlides">
-        <div class="numbertext">6 / 8</div>
-        <img src="slides/15.png" style="width:100%; height:91vh">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">7 / 8</div>
-        <img src="slides/Church Media.png" style="width:100%; height:91vh">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">8 / 8</div>
-        <img src="slides/Live Programs.jpeg" style="width:100%; height:91vh">
-      </div>
-    
-      <a class="prev" onclick="plusSlides(-1)">❮</a>
-      <a class="next" onclick="plusSlides(1)">❯</a>
-      -->
-      <!--
-      <div class="caption-container">
-        <p id="caption"></p>
-      </div>
-      -->
-      <!--
-      <div class="row">
-        <div class="column">
-          <img class="demo cursor" src="slides/1.png" style="width:100%" onclick="currentSlide(1)" alt="Announcements">
+    <div class="holder">
+      <div class="container">
+        <div class="mySlides">
+          <!--<div class="numbertext">1 / 8</div>-->
+          <img
+            name="slide"
+            src="slides/1.png"
+            onclick="display(src)"
+            style="width: 100%; height: 100vh"
+          />
         </div>
-        <div class="column">
-          <img class="demo cursor" src="slides/2.png" style="width:100%" onclick="currentSlide(2)" alt="Daily Truth ">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="slides/3.png" style="width:100%" onclick="currentSlide(3)" alt="Soulwinning App">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="slides/4.png" style="width:100%" onclick="currentSlide(4)" alt="Discipleship">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="slides/It's Ours To Reach.png" style="width:100%" onclick="currentSlide(5)" alt="Give your faith promise weekly!">
-        </div>    
-        <div class="column">
-          <img class="demo cursor" src="slides/15.png" style="width:100%" onclick="currentSlide(6)" alt="Merry Christmas">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="slides/Church Media.png" style="width:100%" onclick="currentSlide(7)" alt="Church Media">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="slides/Live Programs.jpeg" style="width:100%" onclick="currentSlide(8)" alt="Good Morning Dumaguete">
-        </div>
-      </div>
-      -->
-    </div>
-  </div>
-
-  <dialog class="modal" id="modal" style="display: none;">
-    <h2>About this...</h2>
-    <div id="alteredDet" class="row">
-      <div class="column">
-        <img id="ModalImage" name="window" style="width:50vw" alt="Announcements">
-      </div>
-      <div class="column right">
-        <h1>Title</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem iure doloribus obcaecati voluptatum numquam vero consectetur. Ipsum repellendus, ipsa eum, ratione et ab enim corrupti nisi maxime consequatur suscipit accusantium!</p>
       </div>
     </div>
-    <button id="ModalButton" onclick="closemodal()">Close</button>
-  </dialog>
-</body>
 
+    <dialog class="modal" id="modal" style="display: none">
+      <h2>About this...</h2>
+      <div id="alteredDet" class="row">
+        <div class="column">
+          <img
+            id="ModalImage"
+            name="window"
+            style="width: 50vw"
+            alt="Announcements"
+          />
+        </div>
+        <div class="column right">
+          <h1>Title</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem iure
+            doloribus obcaecati voluptatum numquam vero consectetur. Ipsum
+            repellendus, ipsa eum, ratione et ab enim corrupti nisi maxime
+            consequatur suscipit accusantium!
+          </p>
+        </div>
+      </div>
+      <button id="ModalButton" onclick="closemodal()">Close</button>
+    </dialog>
+  </body>
 </html>
