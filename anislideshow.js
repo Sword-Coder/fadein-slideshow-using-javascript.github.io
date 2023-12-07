@@ -1,4 +1,5 @@
 window.onload = changeImg;
+var currentImage;
 
 var i = 0; // Start Point
 var images = [
@@ -29,9 +30,7 @@ function changeImg() {
 }
 
 function display(src) {
-  let detail = "`<h1>HeLLo</h1>`";
-  let result = getImageFromURL(src, images);
-  console.log(result);
+  result = getImageFromURL(src, images);
   var x = document.getElementById("modal");
   x.style.display = "block";
   document.window.src = result;
@@ -61,6 +60,7 @@ function getDayOfYear() {
 }
 
 var dayOfYear = getDayOfYear();
+console.log("Today, is Day: " + dayOfYear);
 
 function searchVerse(reference) {
   //console.log(reference);
@@ -125,6 +125,8 @@ function getVerseByDayOfYear(dayOfYear) {
   }
 }
 
+var modalDetails = "";
+
 //This is a nested function which only called
 function getImageFromURL(url, imagesArray) {
   if (!url || typeof url !== "string") {
@@ -135,8 +137,6 @@ function getImageFromURL(url, imagesArray) {
   let regex2 = /slides\/([^/]+(?:png|jpeg|jpg))/;
   let matches = url.match(regex2); // Find matches in the given URL
 
-  var modalDetails = "";
-
   const desiredImage = decodeURIComponent(matches[1]);
   const ImgObjectDetails = getObjectByImage(announcements, desiredImage);
   if (desiredImage === "verseoftheday.png") {
@@ -146,14 +146,18 @@ function getImageFromURL(url, imagesArray) {
     var chapandVerse = verse.ChapterandVerse;
     var scriptureVerse = verse.ScriptureVerse;
     let matchedImage = decodeURIComponent(matches[0]);
+    //Change the value of the currentImage so that it stays the same when searching for a new verse.
+    currentImage = matchedImage;
+
     modalDetails += `<div class="column">
     <img id="ModalImage" name="window" style="width:50vw" alt="Announcements">
     </div>
     <div class="column right">
     <h1>${reference} ${chapandVerse}</h1>
     <p>${scriptureVerse}</p>
-    <a href="#" class="previous">&laquo; Previous</a>
-    <a href="#" class="next">Next &raquo;</a>
+    <a href="#" class="previous" onclick="prevVerse(${dayOfYear})">&laquo; Previous</a>
+    <h1>Day</h1>
+    <a href="#" class="next" onclick="nextVerse(${dayOfYear})">Next &raquo;</a>
     </div>`;
     document.querySelector(".row").innerHTML = modalDetails;
     return matchedImage;
@@ -175,6 +179,33 @@ function getImageFromURL(url, imagesArray) {
     }
   }
   return null; // No match found or image not present in the array, return null
+}
+//This function gives you the ability to go back a day.
+function prevVerse(dayOfYear) {
+  modalDetails = "";
+  console.log("<<PREVIOUS");
+  dayOfYear = dayOfYear - 1;
+  console.log("Subtracted day: " + dayOfYear);
+  let newVerse = getVerseByDayOfYear(dayOfYear);
+  console.log(newVerse);
+  var reference = newVerse.Reference;
+  var chapandVerse = newVerse.ChapterandVerse;
+  var scriptureVerse = newVerse.ScriptureVerse;
+  modalDetails += `<div class="column">
+    <img id="ModalImage" name="window" src="${currentImage}" style="width:50vw" alt="Announcements">
+    </div>
+    <div class="column right">
+    <h1>${reference} ${chapandVerse}</h1>
+    <p>${scriptureVerse}</p>
+    <a href="#" class="previous" onclick="prevVerse(${dayOfYear})">&laquo; Previous</a>
+    <h1>Day ${dayOfYear}</h1>
+    <a href="#" class="next" onclick="nextVerse(${dayOfYear})">Next &raquo;</a>
+    </div>`;
+  document.querySelector(".row").innerHTML = modalDetails;
+}
+
+function nextVerse(dayOfYear) {
+  console.log("NEXT>>");
 }
 
 let slideIndex = 1;
