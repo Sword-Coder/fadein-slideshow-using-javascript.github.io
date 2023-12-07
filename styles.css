@@ -16,7 +16,7 @@ p {
 }
 h1 {
   text-align: center;
-  color: #9b6f22;
+  color: #573700;
 }
 h2 {
   text-align: center;
@@ -70,7 +70,7 @@ a:hover {
 }
 
 .next {
-  background-color: #04aa6d;
+  background-color: #f1f1f1;
   position: absolute;
   color: white;
   cursor: pointer;
