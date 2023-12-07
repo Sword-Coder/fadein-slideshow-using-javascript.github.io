@@ -196,16 +196,22 @@ function getImageFromURL(url, imagesArray) {
 }
 //This function gives you the ability to go back a day.
 function prevVerse(dayOfYear) {
-  modalDetails = "";
-  console.log("<<PREVIOUS");
-  dayOfYear = dayOfYear - 1;
-  console.log("Subtracted day: " + dayOfYear);
-  let newVerse = getVerseByDayOfYear(dayOfYear);
-  console.log(newVerse);
-  var reference = newVerse.Reference;
-  var chapandVerse = newVerse.ChapterandVerse;
-  var scriptureVerse = newVerse.ScriptureVerse;
-  modalDetails += `<div class="column">
+  let presentDay = getDayOfYear();
+  if (dayOfYear === 1) {
+    modalDetails = "";
+    dayOfYear = presentDay;
+    display(currentImage);
+  } else {
+    modalDetails = "";
+    console.log("<<PREVIOUS");
+    dayOfYear = dayOfYear - 1;
+    console.log("Subtracted day: " + dayOfYear);
+    let newVerse = getVerseByDayOfYear(dayOfYear);
+    console.log(newVerse);
+    var reference = newVerse.Reference;
+    var chapandVerse = newVerse.ChapterandVerse;
+    var scriptureVerse = newVerse.ScriptureVerse;
+    modalDetails += `<div class="column">
     <img id="ModalImage" name="window" src="${currentImage}" style="width:50vw" alt="Announcements">
     </div>
     <div class="column right">
@@ -215,8 +221,9 @@ function prevVerse(dayOfYear) {
     <a href="#" class="previous" onclick="prevVerse(${dayOfYear})">&laquo; Previous</a>
     <a href="#" class="next" onclick="nextVerse(${dayOfYear})">Next &raquo;</a>
     </div>`;
-  document.querySelector(".row").innerHTML = modalDetails;
-  console.log("This is the # of the day now: " + dayOfYear);
+    document.querySelector(".row").innerHTML = modalDetails;
+    console.log("This is the # of the day now: " + dayOfYear);
+  }
 }
 
 function nextVerse(dayOfYear) {
