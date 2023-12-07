@@ -1,7 +1,9 @@
 window.onload = changeImg;
 var currentImage;
-
 var i = 0; // Start Point
+var time = 9000; // Time Between Switch
+var dayOfYear;
+var modalDetails = "";
 var images = [
   "slides/verseoftheday.png",
   "slides/1.png",
@@ -13,7 +15,6 @@ var images = [
   "slides/Church Media.png",
   "slides/It's Ours To Reach.png",
 ]; // Images Array
-var time = 9000; // Time Between Switch
 
 function changeImg() {
   document.slide.src = images[i];
@@ -35,12 +36,15 @@ function display(src) {
   x.style.display = "block";
   document.window.src = result;
 }
+
 function closemodal() {
   var x = document.getElementById("modal");
+  modalDetails = "";
   x.style.display = "none";
 }
 
 //Find object image.
+//Announcements in this function is the array in store-data.js
 function getObjectByImage(announcements, image) {
   for (let i = 0; i < announcements.length; i++) {
     if (announcements[i].image === image) {
@@ -50,6 +54,7 @@ function getObjectByImage(announcements, image) {
   return null; // Return null if no matching object is found
 }
 
+//This is a funtion that gets the # of the current day in the year
 function getDayOfYear() {
   var now = new Date();
   var start = new Date(now.getFullYear(), 0, 0);
@@ -58,10 +63,9 @@ function getDayOfYear() {
   var dayOfYear = Math.floor(diff / oneDay);
   return dayOfYear;
 }
+dayOfYear = getDayOfYear();
 
-var dayOfYear = getDayOfYear();
-console.log("Today, is Day: " + dayOfYear);
-
+//This is a funtion referred to getVerseByDayOfYear which searches for the specific verse.
 function searchVerse(reference) {
   //console.log(reference);
   //console.log(parseInt(reference));
@@ -110,6 +114,7 @@ function searchVerse(reference) {
   }
 }
 
+//This function referred to getImageFromURL
 function getVerseByDayOfYear(dayOfYear) {
   //console.log(dayOfYear);
   if (dayOfYear >= 1 && dayOfYear <= memoryverses.length) {
@@ -125,9 +130,7 @@ function getVerseByDayOfYear(dayOfYear) {
   }
 }
 
-var modalDetails = "";
-
-//This is a nested function which only called
+//This is a nested function is referred to by the function display() which only calls the url from the img src="", the current image shown on the device.
 function getImageFromURL(url, imagesArray) {
   if (!url || typeof url !== "string") {
     return null; // Invalid URL, return null
@@ -137,9 +140,11 @@ function getImageFromURL(url, imagesArray) {
   let regex2 = /slides\/([^/]+(?:png|jpeg|jpg))/;
   let matches = url.match(regex2); // Find matches in the given URL
 
+  //Here I am choosing between the results given to me in matches.
   const desiredImage = decodeURIComponent(matches[1]);
   const ImgObjectDetails = getObjectByImage(announcements, desiredImage);
   if (desiredImage === "verseoftheday.png") {
+    console.log("Today, is Day: " + dayOfYear);
     let verse = getVerseByDayOfYear(dayOfYear);
     console.log(verse);
     var reference = verse.Reference;
@@ -156,8 +161,7 @@ function getImageFromURL(url, imagesArray) {
     <h1>${reference} ${chapandVerse}</h1>
     <p>${scriptureVerse}</p>
     <a href="#" class="previous" onclick="prevVerse(${dayOfYear})">&laquo; Previous</a>
-    <h1>Day</h1>
-    <a href="#" class="next" onclick="nextVerse(${dayOfYear})">Next &raquo;</a>
+    <h1>Day ${dayOfYear}</h1>
     </div>`;
     document.querySelector(".row").innerHTML = modalDetails;
     return matchedImage;
@@ -202,10 +206,47 @@ function prevVerse(dayOfYear) {
     <a href="#" class="next" onclick="nextVerse(${dayOfYear})">Next &raquo;</a>
     </div>`;
   document.querySelector(".row").innerHTML = modalDetails;
+  console.log("This is the # of the day now: " + dayOfYear);
 }
 
 function nextVerse(dayOfYear) {
-  console.log("NEXT>>");
+  console.log("Still the day is: " + dayOfYear);
+  let presentDay = getDayOfYear();
+  dayOfYear = dayOfYear + 1;
+  console.log(dayOfYear);
+  if (dayOfYear === presentDay) {
+    modalDetails = "";
+    console.log("NEXT>>");
+    dayOfYear = presentDay;
+    display(currentImage);
+  } else {
+    modalDetails = "";
+    console.log(modalDetails);
+    console.log("Added day: " + dayOfYear);
+    if (dayOfYear === presentDay) {
+      dayOfYear = presentDay;
+      display(currentImage);
+    } else {
+      let newVerse = getVerseByDayOfYear(dayOfYear);
+      var reference = newVerse.Reference;
+      console.log(reference);
+      var chapandVerse = newVerse.ChapterandVerse;
+      var scriptureVerse = newVerse.ScriptureVerse;
+      console.log("This is the present day: " + presentDay);
+      modalDetails += `<div class="column">
+    <img id="ModalImage" name="window" src="${currentImage}" style="width:50vw" alt="Announcements">
+    </div>
+    <div class="column right">
+    <h1>${reference} ${chapandVerse}</h1>
+    <p>${scriptureVerse}</p>
+    <a href="#" class="previous" onclick="prevVerse(${dayOfYear})">&laquo; Previous</a>
+    <h1>Day ${dayOfYear}</h1>
+    <a href="#" class="next" onclick="nextVerse(${dayOfYear})">Next &raquo;</a>
+    </div>`;
+      document.querySelector(".row").innerHTML = modalDetails;
+      console.log("This is the # of the day now: " + dayOfYear);
+    }
+  }
 }
 
 let slideIndex = 1;
