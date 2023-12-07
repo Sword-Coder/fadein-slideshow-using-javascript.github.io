@@ -167,10 +167,11 @@ function getImageFromURL(url, imagesArray) {
     <img id="ModalImage" name="window" style="width:50vw" alt="Announcements">
     </div>
     <div class="column right">
+    <h2>Day ${dayOfYear}</h1>
     <h1>${reference} ${chapandVerse}</h1>
     <p>${scriptureVerse}</p>
     <a href="#" class="previous" onclick="prevVerse(${dayOfYear})">&laquo; Previous</a>
-    <h1>Day ${dayOfYear}</h1>
+    
     </div>`;
     document.querySelector(".row").innerHTML = modalDetails;
     return matchedImage;
@@ -208,10 +209,10 @@ function prevVerse(dayOfYear) {
     <img id="ModalImage" name="window" src="${currentImage}" style="width:50vw" alt="Announcements">
     </div>
     <div class="column right">
+    <h2>Day ${dayOfYear}</h2>
     <h1>${reference} ${chapandVerse}</h1>
     <p>${scriptureVerse}</p>
     <a href="#" class="previous" onclick="prevVerse(${dayOfYear})">&laquo; Previous</a>
-    <h1>Day ${dayOfYear}</h1>
     <a href="#" class="next" onclick="nextVerse(${dayOfYear})">Next &raquo;</a>
     </div>`;
   document.querySelector(".row").innerHTML = modalDetails;
@@ -246,11 +247,11 @@ function nextVerse(dayOfYear) {
     <img id="ModalImage" name="window" src="${currentImage}" style="width:50vw" alt="Announcements">
     </div>
     <div class="column right">
+    <h2>Day ${dayOfYear}</h2>
     <h1>${reference} ${chapandVerse}</h1>
     <p>${scriptureVerse}</p>
     <a href="#" class="previous" onclick="prevVerse(${dayOfYear})">&laquo; Previous</a>
-    <h1>Day ${dayOfYear}</h1>
-    <a href="#" class="next" onclick="nextVerse(${dayOfYear})">Next &raquo;</a>
+    <a href="#" class="next" onclick="nextVerse(${dayOfYear})">Next &raquo;</a> 
     </div>`;
       document.querySelector(".row").innerHTML = modalDetails;
       console.log("This is the # of the day now: " + dayOfYear);
