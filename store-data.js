@@ -47,7 +47,7 @@ let announcements = [
     schedule: {},
   },
   {
-    image: "Live Programs.png",
+    image: "Live Programs.jpeg",
     title: "Good Morning Dumaguete",
     details:
       "Don't forget to tune in to our online and fm radio every weekday at 7 AM.",
