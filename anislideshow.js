@@ -1,4 +1,8 @@
 window.onload = changeImg;
+var w = window.innerWidth;
+var h = window.innerHeight;
+alert("Width: " + w + "and height: " + h);
+
 var i = 0; // Start Point
 var images = [
   "slides/verseoftheday.png",
@@ -151,6 +155,8 @@ function getImageFromURL(url, imagesArray) {
     <div class="column right">
     <h1>${reference} ${chapandVerse}</h1>
     <p>${scriptureVerse}</p>
+    <a href="#" class="previous">&laquo; Previous</a>
+    <a href="#" class="next">Next &raquo;</a>
     </div>`;
     document.querySelector(".row").innerHTML = modalDetails;
     return matchedImage;
