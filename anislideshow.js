@@ -70,7 +70,7 @@ function searchVerse(reference) {
   //console.log(reference);
   //console.log(parseInt(reference));
   var referenceParts = reference.split(" ");
-  //console.log(referenceParts);
+  console.log(referenceParts);
   var book = referenceParts[0];
   var completeChapterandVerse;
   var chapterVerse = referenceParts[1].split(":");
@@ -86,6 +86,15 @@ function searchVerse(reference) {
     //console.log(chap);
     ver = chapterVerse[1];
     //console.log(ver);
+  } else if (referenceParts.length === 4) {
+    book =
+      referenceParts[0] + " " + referenceParts[1] + " " + referenceParts[2];
+    console.log(book);
+    completeChapterandVerse = referenceParts[3];
+    chapterVerse = referenceParts[3].split(":");
+    chap = chapterVerse[0];
+    //console.log(chap);
+    ver = chapterVerse[1];
   } else {
     var book = referenceParts[0];
     completeChapterandVerse = referenceParts[1];
