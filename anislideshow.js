@@ -1,7 +1,4 @@
 window.onload = changeImg;
-var w = window.innerWidth;
-var h = window.innerHeight;
-alert("Width: " + w + "and height: " + h);
 
 var i = 0; // Start Point
 var images = [
