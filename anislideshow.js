@@ -1,5 +1,5 @@
 window.onload = changeImg;
-prompt(missinoaries);
+console.log(missionaries);
 
 var currentImage;
 var i = 0; // Start Point
