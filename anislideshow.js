@@ -11,11 +11,14 @@ var images = [
   "slides/3.png",
   "slides/4.png",
   "slides/15.png",
+  "slides/17.png",
+  "slides/18.png",
   "slides/Live Programs.jpeg",
   "slides/Church Media.png",
   "slides/It's Ours To Reach.png",
 ]; // Images Array
 
+var missionaries = [];
 function changeImg() {
   document.slide.src = images[i];
   // Check If Index Is Under Max
