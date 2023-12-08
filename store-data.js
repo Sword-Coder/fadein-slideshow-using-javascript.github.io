@@ -33,6 +33,19 @@ let announcements = [
     schedule: {},
   },
   {
+    image: "17.png",
+    title: "Good Morning Dumaguete",
+    details:
+      "A great hour of Christ-honoring music and practical Bible teaching. Enjoy the Sunday re-cap Monday mornings with the “3 Amigos” and the rest of the week with Pastor Randy DeMoville.",
+    schedule: {},
+  },
+  {
+    image: "18.png",
+    title: "Good Morning Dumaguete / Three Amigos",
+    details:
+      "A great hour of Christ-honoring music and practical Bible teaching. Enjoy the Sunday re-cap Monday mornings with the “3 Amigos.”",
+  },
+  {
     image: "Church Media.png",
     title: "Church Media",
     details:
