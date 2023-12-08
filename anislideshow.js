@@ -1,7 +1,7 @@
 window.onload = changeImg;
 var currentImage;
 var i = 0; // Start Point
-var time = 9000; // Time Between Switch
+var time = 10000; // Time Between Switch of Images
 var dayOfYear;
 var modalDetails = "";
 var images = [
