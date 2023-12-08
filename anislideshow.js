@@ -1,4 +1,6 @@
 window.onload = changeImg;
+prompt(missinoaries);
+
 var currentImage;
 var i = 0; // Start Point
 var time = 10000; // Time Between Switch of Images
@@ -18,7 +20,6 @@ var images = [
   "slides/It's Ours To Reach.png",
 ]; // Images Array
 
-var missionaries = [];
 function changeImg() {
   document.slide.src = images[i];
   // Check If Index Is Under Max
