@@ -51,4 +51,3 @@ let missionaries = imageFiles.map((file) =>
 );
 
 console.log(imageURLs);
-return missionaries;
