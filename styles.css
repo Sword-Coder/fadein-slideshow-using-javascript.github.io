@@ -54,7 +54,6 @@ a:hover {
 }
 
 .previous {
-  left: 0;
   background-color: #f1f1f1;
   position: absolute;
   bottom: 0;
@@ -89,9 +88,11 @@ a:hover {
 /* Position the "next button" to the right */
 .next {
   right: 0;
+  border: 1px solid rgb(104, 0, 0);
 }
-.prev {
+.previous {
   left: 0;
+  border: 1px solid rgb(104, 0, 0);
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -167,10 +168,11 @@ a:hover {
 }
 
 #ModalButton {
-  background-color: white;
-  color: black;
-  border: 2px solid rgb(170, 4, 4); /* Green */
+  background-color: #f1f1f1;
+  color: rgb(104, 0, 0);
+  border: 1px solid rgb(104, 0, 0); /* Green */
   position: absolute;
+  font-weight: bold;
   left: 1rem;
   font-size: 25px;
   border-radius: 5px;
