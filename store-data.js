@@ -67,6 +67,12 @@ let announcements = [
     schedule: {},
   },
   {
+    image: "Missionaries.png",
+    title: "Missionaries",
+    details: "Don't forget to pray for our missionaries.",
+    schedule: {},
+  },
+  {
     image: "verseoftheday.png",
     title: "Verse of The Day",
     details: "Don't forget to quote a verse today.",
