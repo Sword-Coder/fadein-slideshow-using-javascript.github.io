@@ -1,4 +1,20 @@
 window.onload = changeImg;
+const folderPath = "./slide"; // Replace with the path to your folder
+
+const missionsFolderPath = `${folderPath}/missions`;
+fetch("slides/missions")
+  .then((response) => response.text())
+  .then((content) => {
+    // Extract the URLs from the content and store them in an array
+    const imageURLs = content
+      .split("\n")
+      .map((line) => line.trim())
+      .filter((line) => line !== "")
+      .map((line) => `${missionsFolderPath}/${line}`);
+
+    console.log(imageURLs);
+  })
+  .catch((error) => console.error(error));
 
 var currentImage;
 var i = 0; // Start Point
@@ -66,12 +82,13 @@ function getDayOfYear() {
   var dayOfYear = Math.floor(diff / oneDay);
   return dayOfYear;
 }
-dayOfYear = getDayOfYear();
+// console.log(dayOfYear);
 
 //This is a funtion referred to getVerseByDayOfYear which searches for the specific verse.
 function searchVerse(reference) {
   //console.log(reference);
   //console.log(parseInt(reference));
+  dayOfYear = getDayOfYear();
   var referenceParts = reference.split(" ");
   console.log(referenceParts);
   var book = referenceParts[0];
