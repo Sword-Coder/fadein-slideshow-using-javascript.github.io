@@ -12,7 +12,7 @@ fetch("slides/missions")
       .filter((line) => line !== "")
       .map((line) => `${missionsFolderPath}/${line}`);
 
-    console.log(imageURLs);
+    //console.log(imageURLs);
   })
   .catch((error) => console.error(error));
 
@@ -22,6 +22,7 @@ var time = 10000; // Time Between Switch of Images
 var dayOfYear;
 var modalDetails = "";
 var images = [
+  "slides/Missionaries.png",
   "slides/verseoftheday.png",
   "slides/1.png",
   "slides/2.png",
@@ -172,7 +173,23 @@ function getImageFromURL(url, imagesArray) {
   //Here I am choosing between the results given to me in matches.
   const desiredImage = decodeURIComponent(matches[1]);
   const ImgObjectDetails = getObjectByImage(announcements, desiredImage);
-  if (desiredImage === "verseoftheday.png") {
+
+  if (desiredImage === "Missionaries.png") {
+    console.log("Hello");
+    let matchedImage = decodeURIComponent(matches[0]);
+    currentImage = matchedImage;
+    var title = ImgObjectDetails.title;
+    var detail = ImgObjectDetails.details;
+    modalDetails += `<div class="column">
+    <img id="ModalImage" name="window" style="width:50vw" alt="Announcements">
+    </div>
+    <div class="column right">
+    <h1>${title}</h1>
+    <p>${detail}</p>
+    <iframe width="455px" height="250" src="https://www.youtube.com/embed/JZzauPtU-wI?si=Ad4eZZ4qdTvn6brq?&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    </div>`;
+    document.querySelector(".row").innerHTML = modalDetails;
+    return matchedImage;
+  } else if (desiredImage === "verseoftheday.png") {
     console.log("Today, is Day: " + dayOfYear);
     let verse = getVerseByDayOfYear(dayOfYear);
     console.log(verse);
@@ -191,7 +208,6 @@ function getImageFromURL(url, imagesArray) {
     <h1>${reference} ${chapandVerse}</h1>
     <p>${scriptureVerse}</p>
     <a href="#" class="previous" onclick="prevVerse(${dayOfYear})">&laquo; Previous</a>
-    
     </div>`;
     document.querySelector(".row").innerHTML = modalDetails;
     return matchedImage;
