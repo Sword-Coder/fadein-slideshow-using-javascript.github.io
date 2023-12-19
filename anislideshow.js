@@ -83,13 +83,14 @@ function getDayOfYear() {
   var dayOfYear = Math.floor(diff / oneDay);
   return dayOfYear;
 }
+dayOfYear = getDayOfYear();
 // console.log(dayOfYear);
 
 //This is a funtion referred to getVerseByDayOfYear which searches for the specific verse.
 function searchVerse(reference) {
   //console.log(reference);
   //console.log(parseInt(reference));
-  dayOfYear = getDayOfYear();
+
   var referenceParts = reference.split(" ");
   console.log(referenceParts);
   var book = referenceParts[0];
@@ -190,6 +191,7 @@ function getImageFromURL(url, imagesArray) {
     document.querySelector(".row").innerHTML = modalDetails;
     return matchedImage;
   } else if (desiredImage === "verseoftheday.png") {
+    getDayOfYear();
     console.log("Today, is Day: " + dayOfYear);
     let verse = getVerseByDayOfYear(dayOfYear);
     console.log(verse);
