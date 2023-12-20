@@ -187,7 +187,10 @@ function getImageFromURL(url, imagesArray) {
     <div class="column right">
     <h1>${title}</h1>
     <p>${detail}</p>
-    <iframe width="455px" height="250" src="https://www.youtube.com/embed/JZzauPtU-wI?si=Ad4eZZ4qdTvn6brq?&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    </div>`;
+    <div style="position: relative; width: 100%; padding-top: 56.25%;">
+    <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FInternationalBaptistChurch%2Fvideos%2F867516260818465%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden; width:100%; height:100%; position:absolute; top: 0; left: 0;" scrolling="no" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </div>
+    </div>`;
     document.querySelector(".row").innerHTML = modalDetails;
     return matchedImage;
   } else if (desiredImage === "verseoftheday.png") {
