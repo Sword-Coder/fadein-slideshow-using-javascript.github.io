@@ -88,6 +88,6 @@ let announcements = [
     image: "Prayer Waves.png",
     title: "Prayer Waves",
     details:
-      "(PLAYS IN APP ONLY) Join us for a time of live prayer as we look forward to the Lord's Day. Send in your prayer requests to be shared with our church family praying along at home.",
+      "(PLAYS IN APP ONLY) Join us at ibcd.theanchor.app for a time of live prayer as we look forward to the Lord's Day. Send in your prayer requests to be shared with our church family praying along at home.",
   },
 ];
