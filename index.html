@@ -6,7 +6,15 @@
     <title>Slide Show with Cross Fade</title>
 
     <link href="styles.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="anislideshow.js" defer></script>
     <script src="store-data.js"></script>
     <script src="scripture-data.js"></script>
@@ -28,7 +36,7 @@
           <!--<div class="numbertext">1 / 8</div>-->
           <img
             name="slide"
-            src=""
+            src="slides/Missionaries.png"
             onclick="display(src)"
             style="width: 100%; height: 100vh"
           />
@@ -55,6 +63,28 @@
       <button id="ModalButton" onclick="closemodal()">Close</button>
     </dialog>
 
-    <button id="paspage"><a href="Login.html">2024</a></button>
+    <button id="paspage" onclick="displayIframe()">2024</button>
+    <div id="iframecontainer" style="display: none">
+      <div class="w3-bar w3-top w3-black w3-large" style="z-index: 4">
+        <span class="w3-bar-item w3-right"
+          ><a
+            style="
+              text-decoration: none;
+              display: inline-block;
+              padding: 8px 16px;
+            "
+            href="index.html"
+            >Back</a
+          ></span
+        >
+      </div>
+      <iframe
+        id="anotherWindow"
+        src="https://sword-coder.w3spaces.com/"
+        width="1500"
+        height="1500"
+        frameborder="0"
+      ></iframe>
+    </div>
   </body>
 </html>
