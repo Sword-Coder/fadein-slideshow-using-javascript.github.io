@@ -16,7 +16,8 @@ let announcements = [
   {
     image: "3.png",
     title: "SoulWinning App",
-    details: "Record your soulwinning experience now in our free app.",
+    details:
+      "Record your soulwinning experience now in our free app. Go now to ibcd.theanchor.app",
     schedule: {},
   },
   {
