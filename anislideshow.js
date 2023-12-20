@@ -218,6 +218,18 @@ function getImageFromURL(url, imagesArray) {
     </div>`;
     document.querySelector(".row").innerHTML = modalDetails;
     return matchedImage;
+  } else if (desiredImage === "3.png") {
+    modalDetails += `<div class="column">
+    <div style="position: relative; width: 100%;">
+    <iframe id="ModalImage" name="window" style="width:50vw" alt="Announcements"src="https://viewer.soulwinning.app/#/wwsw?center=9.327350632729253,123.29690488049894&auto=true&rewind=true&timing=10&retire=10&nightday=true&activecountries=true&showincoming=true&opaqueincoming=true&playBack=true&playBackDays=25&playBackRate=10&playThrough=false&include=church&show=all&churchid=b1b9d84c-914c-429a-a599-7ab0d5740372&userId=bce4f1ac-8d87-47ca-a598-b3f59f87c9ed&subd=ibcd" width="560" height="420" style="border:none;overflow:hidden; width:100%; height:100%; position:absolute; top: 0; left: 0;" scrolling="no" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </div>
+    </div>
+    <div class="column right">
+    <h1>${title}</h1>
+    <p>${detail}</p>
+    </div>`;
+    document.querySelector(".row").innerHTML = modalDetails;
+    return matchedImage; // Return the matched image filename
   } else if (matches) {
     var title = ImgObjectDetails.title;
     var detail = ImgObjectDetails.details;
@@ -225,9 +237,7 @@ function getImageFromURL(url, imagesArray) {
     let matchedImage = decodeURIComponent(matches[0]); // Extract the matched image filename
     if (imagesArray.includes(matchedImage)) {
       modalDetails += `<div class="column">
-    <div style="position: relative; width: 100%;">
-    <iframe id="ModalImage" name="window" style="width:50vw" alt="Announcements"src="https://viewer.soulwinning.app/#/wwsw?center=9.327350632729253,123.29690488049894&auto=true&rewind=true&timing=10&retire=10&nightday=true&activecountries=true&showincoming=true&opaqueincoming=true&playBack=true&playBackDays=25&playBackRate=10&playThrough=false&include=church&show=all&churchid=b1b9d84c-914c-429a-a599-7ab0d5740372&userId=bce4f1ac-8d87-47ca-a598-b3f59f87c9ed&subd=ibcd" width="560" height="420" style="border:none;overflow:hidden; width:100%; height:100%; position:absolute; top: 0; left: 0;" scrolling="no" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-    </div>
+    <img id="ModalImage" name="window" style="width:50vw" alt="Announcements">
     </div>
     <div class="column right">
     <h1>${title}</h1>
