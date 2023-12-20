@@ -26,6 +26,12 @@ let announcements = [
     schedule: {},
   },
   {
+    image: "15-MinsforMarriage.png",
+    title: "15 Minutes for Marraige",
+    details:
+      "Join us in the library at 4:00 pm on Sunday Afternoons for 15 Minutes of Marriage with Pastor Randy DeMoville.",
+  },
+  {
     image: "15.png",
     title: "Merry Christmas",
     details:
@@ -77,5 +83,11 @@ let announcements = [
     title: "Verse of The Day",
     details: "Don't forget to quote a verse today.",
     schedule: {},
+  },
+  {
+    image: "Prayer Waves.png",
+    title: "Prayer Waves",
+    details:
+      "(PLAYS IN APP ONLY) Join us for a time of live prayer as we look forward to the Lord's Day. Send in your prayer requests to be shared with our church family praying along at home.",
   },
 ];
