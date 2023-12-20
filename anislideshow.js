@@ -18,16 +18,18 @@ fetch("slides/missions")
 
 var currentImage;
 var i = 0; // Start Point
-var time = 10000; // Time Between Switch of Images
+var time = 5000; // Time Between Switch of Images
 var dayOfYear;
 var modalDetails = "";
 var images = [
   "slides/Missionaries.png",
+  "slides/Prayer Waves.png",
   "slides/verseoftheday.png",
   "slides/1.png",
   "slides/2.png",
   "slides/3.png",
   "slides/4.png",
+  "slides/15-MinsforMarriage.png",
   "slides/15.png",
   "slides/17.png",
   "slides/18.png",
