@@ -196,9 +196,9 @@ a:hover {
   border-radius: 100%;
   position: absolute;
   z-index: 10000;
-  left: 15px;
+  left: 12px;
   bottom: 2%;
-  box-shadow: 1px 6px 15px rgb(168, 11, 11);
+  box-shadow: 1px 6px 6px rgb(146, 65, 65);
 }
 #iframecontainer {
   width: 100vw;

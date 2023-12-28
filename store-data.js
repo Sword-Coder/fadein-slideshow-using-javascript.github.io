@@ -33,24 +33,11 @@ let announcements = [
       "Join us in the library at 4:00 pm on Sunday Afternoons for 15 Minutes of Marriage with Pastor Randy DeMoville.",
   },
   {
-    image: "15.png",
-    title: "Merry Christmas",
-    details:
-      "It's only a few more days before Christmas and the New Year is just right after. Get your family into church this December 17 for the Christmas Cantata and help them hear the wonderful story about Christ. Come, hear good and godly music and be reminded of God's love.",
-    schedule: {},
-  },
-  {
     image: "17.png",
     title: "Good Morning Dumaguete",
     details:
       "A great hour of Christ-honoring music and practical Bible teaching. Enjoy the Sunday re-cap Monday mornings with the “3 Amigos” and the rest of the week with Pastor Randy DeMoville.",
     schedule: {},
-  },
-  {
-    image: "18.png",
-    title: "Good Morning Dumaguete / Three Amigos",
-    details:
-      "A great hour of Christ-honoring music and practical Bible teaching. Enjoy the Sunday re-cap Monday mornings with the “3 Amigos.”",
   },
   {
     image: "Church Media.png",
