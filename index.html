@@ -63,28 +63,34 @@
       <button id="ModalButton" onclick="closemodal()">Close</button>
     </dialog>
 
-    <button id="paspage" onclick="displayIframe()">2024</button>
+    <button id="paspage" onclick="displayIframe()">
+      <img
+        src="https://cdn.godandman.app/files/GodAndManEmblemColor300x300.png"
+        alt="God&Man"
+        class="avatar"
+      />
+    </button>
     <div id="iframecontainer" style="display: none">
-      <div class="w3-bar w3-top w3-black w3-large" style="z-index: 4">
-        <span class="w3-bar-item w3-right"
-          ><a
-            style="
-              text-decoration: none;
-              display: inline-block;
-              padding: 8px 16px;
-            "
-            href="index.html"
-            >Back</a
-          ></span
-        >
-      </div>
       <iframe
         id="anotherWindow"
-        src="https://jevespada-sword-coder.netlify.app"
+        src="http://localhost:8080/#/"
         width="100%"
         height="100%"
         frameborder="0"
-      ></iframe>
+      >
+      </iframe>
+      <button
+        style="
+          position: absolute;
+          z-index: 4;
+          right: 20px;
+          bottom: 2%;
+          width: 8rem;
+        "
+        onclick="hideIframe()"
+      >
+        Close
+      </button>
     </div>
   </body>
 </html>

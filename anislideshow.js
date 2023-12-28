@@ -21,6 +21,9 @@ fetch("slides/missions")
 function displayIframe() {
   document.getElementById("iframecontainer").style.display = "block";
 }
+function hideIframe() {
+  document.getElementById("iframecontainer").style.display = "none";
+}
 var currentImage;
 var i = 0; // Start Point
 var time = 5000; // Time Between Switch of Images
