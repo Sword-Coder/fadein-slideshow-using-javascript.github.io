@@ -1,5 +1,12 @@
 let announcements = [
   {
+    image: "GodandMan.png",
+    title: "God & Man",
+    details:
+      "For each of these three areas, we are going to divide them into two categories; God and Man. Each of these look a little bit different and we need to work to increase (grow) in each of these areas.",
+    schedule: {},
+  },
+  {
     image: "1.png",
     title: "The Anchor App",
     details:

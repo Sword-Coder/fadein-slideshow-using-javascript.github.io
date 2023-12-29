@@ -17,12 +17,29 @@ fetch("slides/missions")
   })
   .catch((error) => console.error(error));
 */
+//var time = 1 * 60 * 1000;
+// console.log(time);
+var iframewatcher = setInterval(function () {
+  var activeE = document.activeElement;
+  if (activeE && activeE.tagName == "IFRAME") {
+    console.log("Added Time");
+    console.log(time);
+    clearInterval(iframewatcher);
+  }
+}, 100);
 
 function displayIframe() {
+  setTimeout(function () {
+    reload();
+  }, 120000);
   document.getElementById("iframecontainer").style.display = "block";
 }
 function hideIframe() {
   document.getElementById("iframecontainer").style.display = "none";
+}
+function reload() {
+  clearTimeout();
+  hideIframe();
 }
 var currentImage;
 var i = 0; // Start Point
@@ -30,6 +47,7 @@ var time = 5000; // Time Between Switch of Images
 var dayOfYear;
 var modalDetails = "";
 var images = [
+  "slides/GodandMan.png",
   "slides/Missionaries.png",
   "slides/Prayer Waves.png",
   "slides/verseoftheday.png",
@@ -53,6 +71,9 @@ function changeImg() {
   } else {
     // Reset Back To O
     i = 0;
+  }
+  if (i === images.length - 1) {
+    displayIframe();
   }
   // Run function every x seconds
   setTimeout("changeImg()", time);
